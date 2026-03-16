@@ -41,6 +41,18 @@ The repository will evolve around these major areas:
 - worker and evaluator agents for retrieval, scoring, and consensus
 - evidence storage, explorer APIs, and operator tooling
 
+## Repository Layout
+
+The repository is organized around a few top-level work areas:
+
+- `contracts/` for Soroban smart contract crates
+- `services/` for off-chain services such as bridge and API packages
+- `sdk/` for client-facing SDK packages
+- `examples/` for end-to-end usage examples
+- `docs/` for tracked project documentation and maintainer guidance
+
+Each area contains a short README so contributors can orient themselves quickly.
+
 ## Current Status
 
 This repository is currently in the planning stage. The next major step is to
@@ -61,3 +73,24 @@ Maintainer-facing workflow guidance lives under:
 - [ADR templates](docs/adr/README.md)
 - [Issue triage guide](docs/maintainers/issue-triage.md)
 - [Reviewing external contributions](docs/maintainers/reviewing-contributions.md)
+
+## Development
+
+The repository exposes a small root command surface through `npm` scripts:
+
+- `npm run format`
+- `npm run format:check`
+- `npm run lint`
+- `npm run typecheck`
+- `npm test`
+
+If you want optional local Git hooks, run:
+
+```bash
+npm run hooks:install
+```
+
+Configuration guidance and sample environment variables live in:
+
+- [`.env.example`](.env.example)
+- [Local development configuration](docs/development/configuration.md)

@@ -1,4 +1,10 @@
 .env
 .env.*
+!.env.example
+node_modules/
+dist/
+target/
+Cargo.lock
+*.tsbuildinfo
 __pycache__/
 *.pyc

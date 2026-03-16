@@ -1,0 +1,32 @@
+{
+  "name": "the-synod",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Workspace and tooling baseline for The Synod",
+  "type": "module",
+  "workspaces": [
+    "services/*",
+    "sdk/*"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "npm run lint:docs && npm run lint:js && npm run typecheck",
+    "lint:docs": "markdownlint \"**/*.md\"",
+    "lint:js": "eslint .",
+    "typecheck": "tsc --noEmit -p services/api/tsconfig.json && tsc --noEmit -p services/bridge/tsconfig.json && tsc --noEmit -p sdk/js-client/tsconfig.json",
+    "test": "node --test",
+    "hooks:install": "git config core.hooksPath .githooks"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "markdownlint-cli": "^0.44.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  }
+}

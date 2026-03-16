@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Lint docs and TypeScript
+        run: npm run lint
+
+      - name: Run type checks
+        run: npm run typecheck
+
+      - name: Run workspace tests
+        run: npm test
+
+      - name: Set up Rust toolchain
+        uses: dtolnay/rust-toolchain@1.85.0
+        with:
+          targets: wasm32v1-none
+          components: rustfmt
+
+      - name: Check Rust workspace
+        run: cargo check --workspace --target wasm32v1-none
