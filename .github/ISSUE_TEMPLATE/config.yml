@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Support guidance
+    url: https://github.com/ekumamatthew/the_synod/blob/HEAD/SUPPORT.md
+    about: Read support and reporting guidance before opening an issue.
+  - name: Security policy
+    url: https://github.com/ekumamatthew/the_synod/blob/HEAD/SECURITY.md
+    about: Use the security policy for suspected vulnerabilities.

@@ -4,6 +4,8 @@ The Synod is a decentralized oracle network for Soroban focused on resolving
 high-ambiguity real-world questions and publishing normalized, auditable
 verdicts on-chain.
 
+The project is licensed under the [Apache License 2.0](LICENSE).
+
 ## Vision
 
 Soroban applications need a trustworthy way to consume off-chain reality when
@@ -44,3 +46,18 @@ The repository will evolve around these major areas:
 This repository is currently in the planning stage. The next major step is to
 convert the product requirements into a technical design specification and then
 scaffold the first implementation slices.
+
+## Community
+
+Project collaboration standards and contributor guidance live in:
+
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Support](SUPPORT.md)
+- [Security Policy](SECURITY.md)
+
+Maintainer-facing workflow guidance lives under:
+
+- [ADR templates](docs/adr/README.md)
+- [Issue triage guide](docs/maintainers/issue-triage.md)
+- [Reviewing external contributions](docs/maintainers/reviewing-contributions.md)
